@@ -1,1 +1,8 @@
-{"guid":"zeus-accounts","repository":{"type":"git","branch":"master","url":"https://github.com/dirigiblelabs/zeus-v3-accounts.git"}}
+{
+	"guid": "zeus-accounts",
+	"repository": {
+		"type": "git",
+		"branch": "master",
+		"url": "https://github.com/dirigiblelabs/zeus-v3-accounts.git"
+	}
+}
