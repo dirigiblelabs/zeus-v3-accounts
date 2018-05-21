@@ -1,0 +1,153 @@
+{
+    "schema": {
+        "structures": [
+            {
+                "name": "ZEUS_PARTNERS",
+                "type": "TABLE",
+                "columns": 
+                [
+                    {
+                        "name": "ZP_ID",
+                        "type": "INTEGER",
+                        "length": "0",
+                        "primaryKey": "true",
+                        "identity": "true",
+                        "precision": "",
+                        "scale": ""
+                    },
+                    {
+                        "name": "ZP_FIRSTNAME",
+                        "type": "VARCHAR",
+                        "length": "20",
+                        "primaryKey": "false",
+                        "identity": "false",
+                        "precision": "",
+                        "scale": ""
+                    },
+                    {
+                        "name": "ZP_LASTNAME",
+                        "type": "VARCHAR",
+                        "length": "20",
+                        "primaryKey": "false",
+                        "identity": "false",
+                        "precision": "",
+                        "scale": ""
+                    },
+                    {
+                        "name": "ZP_EMAIL",
+                        "type": "VARCHAR",
+                        "length": "20",
+                        "primaryKey": "false",
+                        "identity": "false",
+                        "precision": "",
+                        "scale": ""
+                    },
+                    {
+                        "name": "ZP_ADDRESS",
+                        "type": "VARCHAR",
+                        "length": "20",
+                        "primaryKey": "false",
+                        "identity": "false",
+                        "precision": "",
+                        "scale": ""
+                    }
+                ]
+            },
+            {
+                "name": "ZEUS_ACCOUNTS",
+                "type": "TABLE",
+                "columns": 
+                [
+                    {
+                        "name": "ZA_ID",
+                        "type": "INTEGER",
+                        "length": "0",
+                        "primaryKey": "true",
+                        "identity": "true",
+                        "precision": "",
+                        "scale": ""
+                    },
+                    {
+                        "name": "ZA_NAME",
+                        "type": "VARCHAR",
+                        "length": "20",
+                        "primaryKey": "false",
+                        "identity": "false",
+                        "precision": "",
+                        "scale": ""
+                    },
+                    {
+                        "name": "ZA_REGION",
+                        "type": "VARCHAR",
+                        "length": "20",
+                        "primaryKey": "false",
+                        "identity": "false",
+                        "precision": "",
+                        "scale": ""
+                    },
+                    {
+                        "name": "ZA_PARTNER",
+                        "type": "INTEGER",
+                        "length": "0",
+                        "primaryKey": "false",
+                        "identity": "false",
+                        "precision": "",
+                        "scale": ""
+                    }
+                ]
+            },
+            {
+                "name": "ZEUS_CLUSTERS",
+                "type": "TABLE",
+                "columns": 
+                [
+                    {
+                        "name": "ZC_ID",
+                        "type": "INTEGER",
+                        "length": "0",
+                        "primaryKey": "true",
+                        "identity": "true",
+                        "precision": "",
+                        "scale": ""
+                    },
+                    {
+                        "name": "ZC_NAME",
+                        "type": "VARCHAR",
+                        "length": "20",
+                        "primaryKey": "false",
+                        "identity": "false",
+                        "precision": "",
+                        "scale": ""
+                    },
+                    {
+                        "name": "ZC_URL",
+                        "type": "VARCHAR",
+                        "length": "128",
+                        "primaryKey": "false",
+                        "identity": "false",
+                        "precision": "",
+                        "scale": ""
+                    },
+                    {
+                        "name": "ZC_TOKEN",
+                        "type": "VARCHAR",
+                        "length": "512",
+                        "primaryKey": "false",
+                        "identity": "false",
+                        "precision": "",
+                        "scale": ""
+                    },
+                    {
+                        "name": "ZC_ACCOUNT",
+                        "type": "INTEGER",
+                        "length": "0",
+                        "primaryKey": "false",
+                        "identity": "false",
+                        "precision": "",
+                        "scale": ""
+                    }
+                ]
+            }
+        ]
+    }
+}
