@@ -1,15 +1,41 @@
 angular.module('page', []);
-angular.module('page').controller('PageController', function ($scope, $http) {
+angular.module('page')
+.factory('$messageHub', [function(){
+	var messageHub = new FramesMessageHub();
+
+	var message = function(evtName, data){
+		messageHub.post({data: data}, 'zeus.zeus-accounts.Accounts.' + evtName);
+	};
+
+	var on = function(topic, callback){
+		messageHub.subscribe(callback, topic);
+	};
+
+	return {
+		message: message,
+		on: on,
+		onPartnersModified: function(callback) {
+			on('zeus.zeus-accounts.Partners.modified', callback);
+		},
+		messageEntityModified: function() {
+			message('modified');
+		}
+	};
+}])
+.controller('PageController', function ($scope, $http, $messageHub) {
 
 	var api = '/services/v3/js/zeus-accounts/api/Accounts.js';
 	var partnerOptionsApi = '/services/v3/js/zeus-accounts/api/Partners.js';
 
 	$scope.partnerOptions = [];
 
-	$http.get(partnerOptionsApi)
-	.success(function(data) {
-		$scope.partnerOptions = data;
-	});
+	function partnerOptionsLoad() {
+		$http.get(partnerOptionsApi)
+		.success(function(data) {
+			$scope.partnerOptions = data;
+		});
+	}
+	partnerOptionsLoad();
 
 	function load() {
 		$http.get(api)
@@ -47,6 +73,7 @@ angular.module('page').controller('PageController', function ($scope, $http) {
 		.success(function(data) {
 			load();
 			toggleEntityModal();
+			$messageHub.messageEntityModified();
 		}).error(function(data) {
 			alert(JSON.stringify(data));
 		});
@@ -59,6 +86,7 @@ angular.module('page').controller('PageController', function ($scope, $http) {
 		.success(function(data) {
 			load();
 			toggleEntityModal();
+			$messageHub.messageEntityModified();
 		}).error(function(data) {
 			alert(JSON.stringify(data));
 		})
@@ -69,6 +97,7 @@ angular.module('page').controller('PageController', function ($scope, $http) {
 		.success(function(data) {
 			load();
 			toggleEntityModal();
+			$messageHub.messageEntityModified();
 		}).error(function(data) {
 			alert(JSON.stringify(data));
 		});
@@ -82,6 +111,8 @@ angular.module('page').controller('PageController', function ($scope, $http) {
 		}
 		return null;
 	};
+
+	$messageHub.onPartnersModified(partnerOptionsLoad);
 
 	function toggleEntityModal() {
 		$('#entityModal').modal('toggle');

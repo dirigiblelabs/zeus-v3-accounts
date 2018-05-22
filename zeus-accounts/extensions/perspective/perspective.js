@@ -11,8 +11,9 @@
 exports.getPerspective = function() {
 	return {
 		'name': 'Zeus',
+		'image': 'cubes',
+
 		'link': '/services/v3/web/zeus-accounts/index.html',
-		'order': '999',
-		'image': 'life-ring'
+		'order': 3,
 	};
 };

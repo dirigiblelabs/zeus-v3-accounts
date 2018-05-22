@@ -10,8 +10,9 @@
 
 exports.getTile = function() {
 	return {
-		'name': '',
+		'name': 'Accounts',
+		'icon': 'cubes',
 		'location': '/services/v3/web/zeus-accounts/index.html',
-		'order': 999
+		'order': '3'
 	};
 };
