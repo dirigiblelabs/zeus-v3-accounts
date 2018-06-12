@@ -10,7 +10,7 @@
 
 exports.getPerspective = function() {
 	return {
-		'name': 'Zeus',
+		'name': 'Accounts',
 		'image': 'cubes',
 
 		'link': '/services/v3/web/zeus-accounts/index.html',

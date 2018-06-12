@@ -14,6 +14,9 @@ angular.module('page')
 	return {
 		message: message,
 		on: on,
+		onEntityRefresh: function(callback) {
+			on('zeus.zeus-accounts.Clusters.refresh', callback);
+		},
 		onAccountsModified: function(callback) {
 			on('zeus.zeus-accounts.Accounts.modified', callback);
 		},
@@ -112,6 +115,7 @@ angular.module('page')
 		return null;
 	};
 
+	$messageHub.onEntityRefresh(load);
 	$messageHub.onAccountsModified(accountOptionsLoad);
 
 	function toggleEntityModal() {
