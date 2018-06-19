@@ -16,7 +16,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Zeus | Accounts</title>
+    <title> | </title>
 
 	<!-- Twitter Bootstrap with Theme Support -->
 	<link type="text/css" rel="stylesheet" href="/services/v3/core/theme/bootstrap.min.css">
@@ -40,7 +40,7 @@
 
 	<div class="shell">
 		<div class="sidebar list-group" sidebar active="Workbench"></div>
-		<div id="zeus-accounts" class="plane" views-layout views-layout-model="layoutModel" views-extension-point="launchpad-zeus-accounts-view"></div>
+		<div id="Accounts" class="plane" views-layout views-layout-model="layoutModel" views-extension-point="launchpad-Accounts-view""></div>
 	</div>
 	<div class="statusbar" status-bar></div>
 	
@@ -92,7 +92,7 @@
 				}
 			};
 
-			$http.get('/services/v3/js/zeus/api/launchpad/views.js?extensionPoint=launchpad-zeus-accounts-view')
+			$http.get('/services/v3/js/zeus/api/launchpad/views.js?extensionPoint=launchpad-Accounts-view')
 			.success(function(views) {
 				for (var i = 0 ; i < views.length; i ++) {
 					$scope.layoutModel.views.push(views[i].id);

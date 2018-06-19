@@ -12,8 +12,7 @@ exports.getPerspective = function() {
 	return {
 		'name': 'Accounts',
 		'image': 'cubes',
-
-		'link': '/services/v3/web/zeus-accounts/index.html',
-		'order': 3,
+		'link': '/services/v3/web/zeus-accounts/ui/Accounts/index.html',
+		'order': 300,
 	};
 };

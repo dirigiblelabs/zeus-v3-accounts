@@ -1,4 +1,4 @@
-angular.module('page', []);
+angular.module('page', ['ngAnimate', 'ui.bootstrap']);
 angular.module('page')
 .factory('$messageHub', [function(){
 	var messageHub = new FramesMessageHub();
@@ -25,6 +25,12 @@ angular.module('page')
 .controller('PageController', function ($scope, $http, $messageHub) {
 
 	var api = '/services/v3/js/zeus-accounts/api/Partners.js';
+
+	$scope.dateOptions = {
+		startingDay: 1
+	};
+	$scope.dateFormats = ['yyyy/MM/dd', 'dd-MMMM-yyyy', 'dd.MM.yyyy', 'shortDate'];
+	$scope.dateFormat = $scope.dateFormats[0];
 
 	function load() {
 		$http.get(api)

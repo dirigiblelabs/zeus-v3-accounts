@@ -8,11 +8,13 @@
  * SAP - initial API and implementation
  */
 
-exports.getTile = function() {
+exports.getView = function() {
 	return {
-		'name': 'Accounts',
-		'icon': 'cubes',
-		'location': '/services/v3/web/zeus-accounts/index.html',
-		'order': '3'
+		'id': 'Partners',
+		'name': 'Partners',
+		'label': 'Partners',
+		'factory': 'frame',
+		// 'region': 'center-bottom',
+		'link': '/services/v3/web/zeus-accounts/ui/Accounts/views/Partners/index.html'
 	};
 };

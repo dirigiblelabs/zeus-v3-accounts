@@ -18,7 +18,7 @@
 	</div>
 	<div class="container">
 		<button type="button" ng-click="openNewDialog()" class="btn btn-lg btn-primary pull-right">New</button>
-		<table class="table product-table">
+		<table class="table table-striped table-hover product-table">
 			<thead>
 				<tr>
 					<th>#</th>
@@ -37,8 +37,8 @@
 					<td>{{next.Email}}</td>
 					<td>{{next.Address}}</td>
 					<td>
-						<i class="close fa fa-2x fa-remove" ng-click="openDeleteDialog(next)"></i>
-						<i class="close fa fa-2x fa-pencil" ng-click="openEditDialog(next)" style="margin-right: 0.5em"></i>
+						<button type="button" ng-click="openDeleteDialog(next)" class="btn btn-lg btn-danger pull-right"><i class="fa fa-remove"></i></button>
+    					<button type="button" ng-click="openEditDialog(next)" class="btn btn-lg btn-success pull-right" style="margin-right: 0.5em"><i class="fa fa-pencil"></i></button>
 					</td>
 				</tr>
 			</tbody>
@@ -95,6 +95,8 @@
 	<script type="text/javascript" src="/services/v3/web/resources/angular/1.4.7/angular.min.js"></script>
 	<script type="text/javascript" src="/services/v3/web/resources/angular/1.4.7/angular-resource.min.js"></script>
 	<script type="text/javascript" src="/services/v3/web/zeus/resources/js/message-hub.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-animate.min.js"></script>
+	<script type="text/javascript" src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.14.3.js"></script>
 
 	<script type="text/javascript" src="controller.js"></script>
 

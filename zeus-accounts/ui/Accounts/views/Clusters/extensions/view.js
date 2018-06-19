@@ -10,11 +10,11 @@
 
 exports.getView = function() {
 	return {
-		'id': 'Accounts',
-		'name': 'Accounts',
-		'label': 'Accounts',
+		'id': 'Clusters',
+		'name': 'Clusters',
+		'label': 'Clusters',
 		'factory': 'frame',
 		// 'region': 'center-bottom',
-		'link': '/services/v3/web/zeus-accounts/views/Accounts/index.html'
+		'link': '/services/v3/web/zeus-accounts/ui/Accounts/views/Clusters/index.html'
 	};
 };

@@ -1,10 +1,10 @@
-angular.module('page', []);
+angular.module('page', ['ngAnimate', 'ui.bootstrap']);
 angular.module('page')
 .factory('$messageHub', [function(){
 	var messageHub = new FramesMessageHub();
 
 	var message = function(evtName, data){
-		messageHub.post({data: data}, 'zeus.zeus-accounts.Accounts.' + evtName);
+		messageHub.post({data: data}, 'zeus.zeus-accounts.Clusters.' + evtName);
 	};
 
 	var on = function(topic, callback){
@@ -15,10 +15,10 @@ angular.module('page')
 		message: message,
 		on: on,
 		onEntityRefresh: function(callback) {
-			on('zeus.zeus-accounts.Accounts.refresh', callback);
+			on('zeus.zeus-accounts.Clusters.refresh', callback);
 		},
-		onPartnersModified: function(callback) {
-			on('zeus.zeus-accounts.Partners.modified', callback);
+		onAccountsModified: function(callback) {
+			on('zeus.zeus-accounts.Accounts.modified', callback);
 		},
 		messageEntityModified: function() {
 			message('modified');
@@ -27,18 +27,24 @@ angular.module('page')
 }])
 .controller('PageController', function ($scope, $http, $messageHub) {
 
-	var api = '/services/v3/js/zeus-accounts/api/Accounts.js';
-	var partnerOptionsApi = '/services/v3/js/zeus-accounts/api/Partners.js';
+	var api = '/services/v3/js/zeus-accounts/api/Clusters.js';
+	var accountOptionsApi = '/services/v3/js/zeus-accounts/api/Accounts.js';
 
-	$scope.partnerOptions = [];
+	$scope.accountOptions = [];
 
-	function partnerOptionsLoad() {
-		$http.get(partnerOptionsApi)
+	$scope.dateOptions = {
+		startingDay: 1
+	};
+	$scope.dateFormats = ['yyyy/MM/dd', 'dd-MMMM-yyyy', 'dd.MM.yyyy', 'shortDate'];
+	$scope.dateFormat = $scope.dateFormats[0];
+
+	function accountOptionsLoad() {
+		$http.get(accountOptionsApi)
 		.success(function(data) {
-			$scope.partnerOptions = data;
+			$scope.accountOptions = data;
 		});
 	}
-	partnerOptionsLoad();
+	accountOptionsLoad();
 
 	function load() {
 		$http.get(api)
@@ -106,17 +112,17 @@ angular.module('page')
 		});
 	};
 
-	$scope.partnerOptionValue = function(optionKey) {
-		for (var i = 0 ; i < $scope.partnerOptions.length; i ++) {
-			if ($scope.partnerOptions[i].Id === optionKey) {
-				return $scope.partnerOptions[i].Email;
+	$scope.accountOptionValue = function(optionKey) {
+		for (var i = 0 ; i < $scope.accountOptions.length; i ++) {
+			if ($scope.accountOptions[i].Id === optionKey) {
+				return $scope.accountOptions[i].Name;
 			}
 		}
 		return null;
 	};
 
 	$messageHub.onEntityRefresh(load);
-	$messageHub.onPartnersModified(partnerOptionsLoad);
+	$messageHub.onAccountsModified(accountOptionsLoad);
 
 	function toggleEntityModal() {
 		$('#entityModal').modal('toggle');
