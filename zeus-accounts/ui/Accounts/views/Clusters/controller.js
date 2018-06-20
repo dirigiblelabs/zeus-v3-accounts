@@ -28,7 +28,7 @@ angular.module('page')
 .controller('PageController', function ($scope, $http, $messageHub) {
 
 	var api = '/services/v3/js/zeus-accounts/api/Clusters.js';
-	var accountOptionsApi = '';
+	var accountOptionsApi = '/services/v3/js/zeus-accounts/api/Accounts.js';
 
 	$scope.accountOptions = [];
 
