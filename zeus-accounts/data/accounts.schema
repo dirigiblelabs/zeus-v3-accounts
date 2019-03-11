@@ -92,15 +92,15 @@
                         "nullable": true,
                         "name": "ZC_TOKEN"
                     }, {
-                        "type": "BOOLEAN",
-                        "length": 20,
-                        "nullable": true,
-                        "name": "ZC_IS_DEFAULT"
-                    }, {
                         "type": "INTEGER",
                         "length": 0,
                         "nullable": true,
                         "name": "ZC_ACCOUNT"
+                    }, {
+                        "type": "BOOLEAN",
+                        "length": 20,
+                        "nullable": true,
+                        "name": "ZC_IS_DEFAULT"
                     }]
             }]
     }

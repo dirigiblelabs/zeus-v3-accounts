@@ -26,13 +26,13 @@ var dao = daoApi.create({
 			column: "ZC_TOKEN",
 			type: "VARCHAR",
 		}, {
-			name: "IsDefault",
-			column: "ZC_IS_DEFAULT",
-			type: "BOOLEAN",
-		}, {
 			name: "Account",
 			column: "ZC_ACCOUNT",
 			type: "INTEGER",
+		}, {
+			name: "IsDefault",
+			column: "ZC_IS_DEFAULT",
+			type: "BOOLEAN",
 		}]
 });
 exports.list = function(settings) {

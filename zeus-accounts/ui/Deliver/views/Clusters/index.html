@@ -23,8 +23,8 @@
 				<tr>
 					<th>#</th>
 					<th class="text-capitalize">Name</th>
-					<th class="text-capitalize">Default</th>
 					<th class="text-capitalize">Account</th>
+					<th class="text-capitalize">Default</th>
 					<th></th>
 				</tr>
 			</thead>
@@ -32,8 +32,8 @@
 				<tr ng-repeat="next in data">
 					<td>{{(dataPage - 1) * dataLimit + $index + 1}}</td>
 					<td>{{next.Name}}</td>
-					<td><input type="checkbox" ng-model="next.IsDefault" disabled></td>
 					<td>{{accountOptionValue(next.Account)}}</td>
+					<td><input type="checkbox" ng-model="next.IsDefault" disabled></td>
 					<td>
 						<i class="close fa fa-remove" ng-click="openDeleteDialog(next)" style="font-size: 1.4em"></i>
 						<i class="close fa fa-bars" ng-click="openEditDialog(next)" style="margin-right: 0.5em; font-size: 1.4em"></i>					</td>
@@ -72,12 +72,12 @@
 							<textarea class="form-control" placeholder="Enter token" ng-model="entity.Token"></textarea>
 						</div>
 						<div class="form-group">
-							<label>Default</label>
-							<input type="checkbox" ng-model="entity.IsDefault">
-						</div>
-						<div class="form-group">
 							<label>Account</label>
 							<select class="form-control" ng-options="o.Id as o.Name for o in accountOptions" ng-model="entity.Account"></select>
+						</div>
+						<div class="form-group">
+							<label>Default</label>
+							<input type="checkbox" ng-model="entity.IsDefault">
 						</div>
 					</form>
 					<div ng-show="actionType === 'delete'">
