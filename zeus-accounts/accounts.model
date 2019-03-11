@@ -461,6 +461,35 @@
                         "widgetIsMajor": "true",
                         "widgetDropDownKey": "Id",
                         "widgetDropDownValue": "Name"
+                    },
+                    {
+                        "name": "IsDefault",
+                        "dataName": "ZC_IS_DEFAULT",
+                        "dataType": "BOOLEAN",
+                        "dataLength": "20",
+                        "dataDefaultValue": "",
+                        "dataPrimaryKey": "false",
+                        "dataAutoIncrement": "false",
+                        "dataNotNull": "false",
+                        "dataUnique": "false",
+                        "dataPrecision": null,
+                        "dataScale": null,
+                        "relationshipType": null,
+                        "relationshipCardinality": null,
+                        "relationshipName": "",
+                        "relationshipEntityName": "",
+                        "relationshipEntityPerspectiveName": "",
+                        "widgetType": "CHECKBOX",
+                        "widgetLength": "20",
+                        "widgetLabel": "Default",
+                        "widgetShortLabel": "IsDefault",
+                        "widgetPattern": "",
+                        "widgetFormat": "",
+                        "widgetSection": "",
+                        "widgetService": "",
+                        "widgetIsMajor": "true",
+                        "widgetDropDownKey": "",
+                        "widgetDropDownValue": ""
                     }
                 ]
             }
