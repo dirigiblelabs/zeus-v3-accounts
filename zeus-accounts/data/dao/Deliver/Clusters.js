@@ -14,21 +14,25 @@ var dao = daoApi.create({
 			column: "ZC_NAME",
 			type: "VARCHAR",
 		}, {
-			name: "URL",
-			column: "ZC_URL",
+			name: "API",
+			column: "ZC_API",
+			type: "VARCHAR",
+		}, {
+			name: "Ingress",
+			column: "ZC_INGRESS",
 			type: "VARCHAR",
 		}, {
 			name: "Token",
 			column: "ZC_TOKEN",
 			type: "VARCHAR",
 		}, {
-			name: "Account",
-			column: "ZC_ACCOUNT",
-			type: "INTEGER",
-		}, {
 			name: "IsDefault",
 			column: "ZC_IS_DEFAULT",
 			type: "BOOLEAN",
+		}, {
+			name: "Account",
+			column: "ZC_ACCOUNT",
+			type: "INTEGER",
 		}]
 });
 exports.list = function(settings) {

@@ -80,22 +80,27 @@
                         "type": "VARCHAR",
                         "length": 128,
                         "nullable": true,
-                        "name": "ZC_URL"
+                        "name": "ZC_API"
+                    }, {
+                        "type": "VARCHAR",
+                        "length": 128,
+                        "nullable": true,
+                        "name": "ZC_INGRESS"
                     }, {
                         "type": "VARCHAR",
                         "length": 2048,
                         "nullable": true,
                         "name": "ZC_TOKEN"
                     }, {
-                        "type": "INTEGER",
-                        "length": 0,
-                        "nullable": true,
-                        "name": "ZC_ACCOUNT"
-                    }, {
                         "type": "BOOLEAN",
                         "length": 20,
                         "nullable": true,
                         "name": "ZC_IS_DEFAULT"
+                    }, {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "nullable": true,
+                        "name": "ZC_ACCOUNT"
                     }]
             }]
     }
