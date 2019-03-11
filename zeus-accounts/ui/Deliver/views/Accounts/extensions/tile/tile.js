@@ -10,12 +10,12 @@
 
 var dao = require('zeus-accounts/data/dao/Deliver/Accounts.js')
 
-exports.getTile = function() {
+exports.getTile = function(relativePath) {
 	return {
 		'name': 'Accounts',
 		'group': 'Deliver',
 		'icon': 'id-card-o',
-		'location': '/services/v3/web/zeus-accounts/ui/Deliver/index.html',
+		'location': relativePath + 'services/v3/web/zeus-accounts/ui/Deliver/index.html',
 		'count': dao.customDataCount(),
 		'order': '300'
 	};

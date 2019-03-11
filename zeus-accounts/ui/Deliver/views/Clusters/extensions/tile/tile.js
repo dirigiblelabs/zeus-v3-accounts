@@ -10,12 +10,12 @@
 
 var dao = require('zeus-accounts/data/dao/Deliver/Clusters.js')
 
-exports.getTile = function() {
+exports.getTile = function(relativePath) {
 	return {
 		'name': 'Clusters',
 		'group': 'Deliver',
 		'icon': 'cubes',
-		'location': '/services/v3/web/zeus-accounts/ui/Deliver/index.html',
+		'location': relativePath + 'services/v3/web/zeus-accounts/ui/Deliver/index.html',
 		'count': dao.customDataCount(),
 		'order': '300'
 	};
